@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavender Greetings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f0ff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: radial-gradient(#e6d7ff 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .greeting-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(180, 140, 220, 0.2);
+            border: 1px solid #e6d7ff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .greeting-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, #b28bff, #e6b3ff, #b28bff);
+        }
+        
+        .lavender-icon {
+            color: #9674c8;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #6a4a9c;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .greeting-text {
+            color: #7a5ba6;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .user-name {
+            color: #9b7aca;
+            font-weight: bold;
+            background-color: #f5f0ff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .lavender-field {
+            width: 80%;
+            max-width: 400px;
+            height: 150px;
+            background-color: #e6d7ff;
+            margin: 30px auto;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .lavender-plant {
+            width: 20px;
+            height: 80px;
+            background-color: #9674c8;
+            position: relative;
+            margin: 0 15px;
+        }
+        
+        .lavender-plant::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: #b28bff;
+            border-radius: 50%;
+        }
+        
+        .lavender-plant::after {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: -5px;
+            width: 30px;
+            height: 30px;
+            background-color: #c9adff;
+            border-radius: 50%;
+        }
+        
+        .lavender-plant:nth-child(2) {
+            height: 100px;
+            background-color: #8a65bf;
+        }
+        
+        .lavender-plant:nth-child(2)::before {
+            background-color: #a579e6;
+            width: 45px;
+            height: 45px;
+            left: -12px;
+        }
+        
+        .lavender-plant:nth-child(3) {
+            height: 70px;
+            background-color: #a585d6;
+        }
+        
+        .lavender-plant:nth-child(3)::after {
+            background-color: #d4bfff;
+            top: -25px;
+        }
+        
+        .message {
+            color: #7a5ba6;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 30px auto;
+            line-height: 1.7;
+            padding: 20px;
+            background-color: #f9f6ff;
+            border-radius: 15px;
+            border-left: 5px solid #b28bff;
+        }
+        
+        .footer {
+            color: #9674c8;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .heart {
+            color: #ff99cc;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .greeting-text {
+                font-size: 1.2rem;
+            }
+            
+            .lavender-field {
+                width: 95%;
+                height: 120px;
+            }
+            
+            .lavender-plant {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="greeting-card">
+            <div class="lavender-icon">🌸</div>
+            <h1>Hello There!</h1>
+            <p class="greeting-text">
+                Welcome to this lovely lavender space, <span class="user-name">beautiful soul</span>!
+            </p>
+            
+            <div class="lavender-field">
+                <div class="lavender-plant"></div>
+                <div class="lavender-plant"></div>
+                <div class="lavender-plant"></div>
+            </div>
+            
+            <p class="message">
+                This is a simple example of a cute lavender-themed webpage. 
+               For deployment of webpage files on github demonstration. Enjoy!
+            </p>
+            
+            <div class="footer">
+               Altan is very cute!  <span class="heart">❤</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple greeting based on time of day
+        function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting;
+            
+            if (hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            
+            document.querySelector('h1').textContent = greeting + '!';
+            
+            // Update the user name in greeting text
+            const nameElement = document.querySelector('.user-name');
+            
+            // Try to get the user's name from browser storage
+            let userName = localStorage.getItem('lavenderUserName');
+            
+            if (!userName) {
+                // If no name is stored, use a default
+                const names = ['beautiful soul', 'lovely person', 'wonderful visitor', 'dear friend'];
+                userName = names[Math.floor(Math.random() * names.length)];
+                
+                // Ask for user's name after a short delay
+                setTimeout(() => {
+                    const userNameInput = prompt("What's your name? (Optional)");
+                    if (userNameInput && userNameInput.trim() !== '') {
+                        userName = userNameInput.trim();
+                        localStorage.setItem('lavenderUserName', userName);
+                        nameElement.textContent = userName;
+                    }
+                }, 1000);
+            }
+            
+            nameElement.textContent = userName;
+        }
+        
+        // Animate the lavender plants
+        function animateLavender() {
+            const plants = document.querySelectorAll('.lavender-plant');
+            plants.forEach((plant, index) => {
+                // Add slight animation
+                plant.style.transform = `translateY(${Math.sin(Date.now() / 1000 + index) * 5}px)`;
+            });
+            
+            requestAnimationFrame(animateLavender);
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateGreeting();
+            animateLavender();
+            
+            // Change background pattern on click for fun
+            document.body.addEventListener('click', function() {
+                const patterns = [
+                    'radial-gradient(#e6d7ff 2px, transparent 2px)',
+                    'linear-gradient(45deg, #f5f0ff 25%, transparent 25%), linear-gradient(-45deg, #f5f0ff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f5f0ff 75%), linear-gradient(-45deg, transparent 75%, #f5f0ff 75%)',
+                    'repeating-linear-gradient(45deg, #e6d7ff, #e6d7ff 10px, #f5f0ff 10px, #f5f0ff 20px)'
+                ];
+                
+                const currentPattern = document.body.style.backgroundImage;
+                let nextPattern;
+                
+                if (!currentPattern || currentPattern.includes('radial-gradient')) {
+                    nextPattern = patterns[1];
+                } else if (currentPattern.includes('linear-gradient(45deg')) {
+                    nextPattern = patterns[2];
+                } else {
+                    nextPattern = patterns[0];
+                }
+                
+                document.body.style.backgroundImage = nextPattern;
+                document.body.style.backgroundSize = '30px 30px';
+            });
+        });
+    </script>
+</body>
+</html>
